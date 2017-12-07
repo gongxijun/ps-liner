@@ -1,0 +1,8 @@
+/Users/sina/github/liner/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/sina/github/liner/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sina/github/liner/cmake-build-debug/ps-lite/CMakeFiles/rebuild_cache.dir
+/Users/sina/github/liner/cmake-build-debug/ps-lite/CMakeFiles/edit_cache.dir
+/Users/sina/github/liner/cmake-build-debug/ps-lite/CMakeFiles/pslite.dir
+/Users/sina/github/liner/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
+/Users/sina/github/liner/cmake-build-debug/src/CMakeFiles/edit_cache.dir
+/Users/sina/github/liner/cmake-build-debug/src/CMakeFiles/liner.dir

@@ -1,0 +1,6 @@
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/sina/github/liner
+-- Start building project 
+-- Found PROTOBUF Compiler: /usr/local/bin/protoc
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/sina/github/liner

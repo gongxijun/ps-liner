@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+686c6bb3893b9cf1518a0ef125f2df61 ps-lite/src/meta.pb.cc

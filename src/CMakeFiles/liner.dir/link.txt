@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -std=c++11 -O3 -Wno-unknown-pragmas -pedantic -Wall  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/liner.dir/datamain.cc.o CMakeFiles/liner.dir/murmur_hash3.cc.o CMakeFiles/liner.dir/trainliner.cc.o  -o ../bin/liner /usr/local/lib/libzmq.dylib ../ps-lite/libpslite.a -lzmq -lprotobuf 

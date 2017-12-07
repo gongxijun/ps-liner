@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libpslite.a  CMakeFiles/pslite.dir/src/customer.cc.o CMakeFiles/pslite.dir/src/postoffice.cc.o CMakeFiles/pslite.dir/src/van.cc.o CMakeFiles/pslite.dir/src/meta.pb.cc.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libpslite.a

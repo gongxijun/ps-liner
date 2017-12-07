@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="pslite"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\ps-lite\;CMake Files\ps-lite\cmake\;CMake Files\ps-lite\cmake\External\;CMake Files\ps-lite\cmake\Modules\;CMake Files\src\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/sina/github/liner/cmake-build-debug/ps-lite"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/cmake-build-debug/ps-lite/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/cmake-build-debug/ps-lite/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/cmake-build-debug/ps-lite/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/cmake-build-debug/ps-lite/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pslite">
+				<Option output="/Users/sina/github/liner/cmake-build-debug/ps-lite/libpslite.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sina/github/liner/cmake-build-debug/ps-lite"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/sina/github/liner/include"/>
+					<Add directory="/Users/sina/github/liner/ps-lite/include"/>
+					<Add directory="/Users/sina/github/liner/ps-lite/pslite"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/sina/github/liner/cmake-build-debug/ps-lite/include"/>
+					<Add directory="/Users/sina/github/liner/cmake-build-debug/ps-lite/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/cmake-build-debug/ps-lite/Makefile&quot;  VERBOSE=1 pslite"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/cmake-build-debug/ps-lite/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/cmake-build-debug/ps-lite/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/cmake-build-debug/ps-lite/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pslite/fast">
+				<Option output="/Users/sina/github/liner/cmake-build-debug/ps-lite/libpslite.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sina/github/liner/cmake-build-debug/ps-lite"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/sina/github/liner/include"/>
+					<Add directory="/Users/sina/github/liner/ps-lite/include"/>
+					<Add directory="/Users/sina/github/liner/ps-lite/pslite"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/sina/github/liner/cmake-build-debug/ps-lite/include"/>
+					<Add directory="/Users/sina/github/liner/cmake-build-debug/ps-lite/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/cmake-build-debug/ps-lite/Makefile&quot;  VERBOSE=1 pslite/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/cmake-build-debug/ps-lite/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/cmake-build-debug/ps-lite/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/cmake-build-debug/ps-lite/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/sina/github/liner/cmake-build-debug/ps-lite/src/meta.pb.cc">
+			<Option target="pslite"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/cmake-build-debug/ps-lite/src/meta.pb.cc.rule">
+			<Option target="pslite"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/ps-lite/src/customer.cc">
+			<Option target="pslite"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/ps-lite/src/postoffice.cc">
+			<Option target="pslite"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/ps-lite/src/van.cc">
+			<Option target="pslite"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/ps-lite/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ps-lite\"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/ps-lite/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ps-lite\"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/ps-lite/cmake/ProtoBuf.cmake">
+			<Option virtualFolder="CMake Files\ps-lite\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/ps-lite/cmake/ProtoBuf.cmake">
+			<Option virtualFolder="CMake Files\ps-lite\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/ps-lite/cmake/External/zmq.cmake">
+			<Option virtualFolder="CMake Files\ps-lite\cmake\External\"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/ps-lite/cmake/External/zmq.cmake">
+			<Option virtualFolder="CMake Files\ps-lite\cmake\External\"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/ps-lite/cmake/Modules/FindZMQ.cmake">
+			<Option virtualFolder="CMake Files\ps-lite\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/ps-lite/cmake/Modules/FindZMQ.cmake">
+			<Option virtualFolder="CMake Files\ps-lite\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
