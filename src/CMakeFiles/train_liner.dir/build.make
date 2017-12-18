@@ -81,28 +81,28 @@ src/CMakeFiles/train_liner.dir/ValidateParam.cpp.o.provides: src/CMakeFiles/trai
 src/CMakeFiles/train_liner.dir/ValidateParam.cpp.o.provides.build: src/CMakeFiles/train_liner.dir/ValidateParam.cpp.o
 
 
-src/CMakeFiles/train_liner.dir/datamain.cc.o: src/CMakeFiles/train_liner.dir/flags.make
-src/CMakeFiles/train_liner.dir/datamain.cc.o: src/datamain.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sina/github/liner/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/train_liner.dir/datamain.cc.o"
-	cd /Users/sina/github/liner/src && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/train_liner.dir/datamain.cc.o -c /Users/sina/github/liner/src/datamain.cc
+src/CMakeFiles/train_liner.dir/liner.cpp.o: src/CMakeFiles/train_liner.dir/flags.make
+src/CMakeFiles/train_liner.dir/liner.cpp.o: src/liner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sina/github/liner/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/train_liner.dir/liner.cpp.o"
+	cd /Users/sina/github/liner/src && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/train_liner.dir/liner.cpp.o -c /Users/sina/github/liner/src/liner.cpp
 
-src/CMakeFiles/train_liner.dir/datamain.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/train_liner.dir/datamain.cc.i"
-	cd /Users/sina/github/liner/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sina/github/liner/src/datamain.cc > CMakeFiles/train_liner.dir/datamain.cc.i
+src/CMakeFiles/train_liner.dir/liner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/train_liner.dir/liner.cpp.i"
+	cd /Users/sina/github/liner/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sina/github/liner/src/liner.cpp > CMakeFiles/train_liner.dir/liner.cpp.i
 
-src/CMakeFiles/train_liner.dir/datamain.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/train_liner.dir/datamain.cc.s"
-	cd /Users/sina/github/liner/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sina/github/liner/src/datamain.cc -o CMakeFiles/train_liner.dir/datamain.cc.s
+src/CMakeFiles/train_liner.dir/liner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/train_liner.dir/liner.cpp.s"
+	cd /Users/sina/github/liner/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sina/github/liner/src/liner.cpp -o CMakeFiles/train_liner.dir/liner.cpp.s
 
-src/CMakeFiles/train_liner.dir/datamain.cc.o.requires:
+src/CMakeFiles/train_liner.dir/liner.cpp.o.requires:
 
-.PHONY : src/CMakeFiles/train_liner.dir/datamain.cc.o.requires
+.PHONY : src/CMakeFiles/train_liner.dir/liner.cpp.o.requires
 
-src/CMakeFiles/train_liner.dir/datamain.cc.o.provides: src/CMakeFiles/train_liner.dir/datamain.cc.o.requires
-	$(MAKE) -f src/CMakeFiles/train_liner.dir/build.make src/CMakeFiles/train_liner.dir/datamain.cc.o.provides.build
-.PHONY : src/CMakeFiles/train_liner.dir/datamain.cc.o.provides
+src/CMakeFiles/train_liner.dir/liner.cpp.o.provides: src/CMakeFiles/train_liner.dir/liner.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/train_liner.dir/build.make src/CMakeFiles/train_liner.dir/liner.cpp.o.provides.build
+.PHONY : src/CMakeFiles/train_liner.dir/liner.cpp.o.provides
 
-src/CMakeFiles/train_liner.dir/datamain.cc.o.provides.build: src/CMakeFiles/train_liner.dir/datamain.cc.o
+src/CMakeFiles/train_liner.dir/liner.cpp.o.provides.build: src/CMakeFiles/train_liner.dir/liner.cpp.o
 
 
 src/CMakeFiles/train_liner.dir/murmur_hash3.cc.o: src/CMakeFiles/train_liner.dir/flags.make
@@ -156,7 +156,7 @@ src/CMakeFiles/train_liner.dir/trainliner.cc.o.provides.build: src/CMakeFiles/tr
 # Object files for target train_liner
 train_liner_OBJECTS = \
 "CMakeFiles/train_liner.dir/ValidateParam.cpp.o" \
-"CMakeFiles/train_liner.dir/datamain.cc.o" \
+"CMakeFiles/train_liner.dir/liner.cpp.o" \
 "CMakeFiles/train_liner.dir/murmur_hash3.cc.o" \
 "CMakeFiles/train_liner.dir/trainliner.cc.o"
 
@@ -164,7 +164,7 @@ train_liner_OBJECTS = \
 train_liner_EXTERNAL_OBJECTS =
 
 bin/train_liner: src/CMakeFiles/train_liner.dir/ValidateParam.cpp.o
-bin/train_liner: src/CMakeFiles/train_liner.dir/datamain.cc.o
+bin/train_liner: src/CMakeFiles/train_liner.dir/liner.cpp.o
 bin/train_liner: src/CMakeFiles/train_liner.dir/murmur_hash3.cc.o
 bin/train_liner: src/CMakeFiles/train_liner.dir/trainliner.cc.o
 bin/train_liner: src/CMakeFiles/train_liner.dir/build.make
@@ -180,7 +180,7 @@ src/CMakeFiles/train_liner.dir/build: bin/train_liner
 .PHONY : src/CMakeFiles/train_liner.dir/build
 
 src/CMakeFiles/train_liner.dir/requires: src/CMakeFiles/train_liner.dir/ValidateParam.cpp.o.requires
-src/CMakeFiles/train_liner.dir/requires: src/CMakeFiles/train_liner.dir/datamain.cc.o.requires
+src/CMakeFiles/train_liner.dir/requires: src/CMakeFiles/train_liner.dir/liner.cpp.o.requires
 src/CMakeFiles/train_liner.dir/requires: src/CMakeFiles/train_liner.dir/murmur_hash3.cc.o.requires
 src/CMakeFiles/train_liner.dir/requires: src/CMakeFiles/train_liner.dir/trainliner.cc.o.requires
 

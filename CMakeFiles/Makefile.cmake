@@ -47,6 +47,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "ps-lite/cmake/Modules/FindZMQ.cmake"
   "ps-lite/cmake/ProtoBuf.cmake"
   "src/CMakeLists.txt"
+  "src/data/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -60,10 +61,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "ps-lite/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/data/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "ps-lite/CMakeFiles/pslite.dir/DependInfo.cmake"
   "src/CMakeFiles/train_liner.dir/DependInfo.cmake"
+  "src/data/CMakeFiles/datamain.dir/DependInfo.cmake"
   )

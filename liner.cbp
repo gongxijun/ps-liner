@@ -5,7 +5,7 @@
 		<Option title="liner"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="clang"/>
-		<Option virtualFolders="CMake Files\;CMake Files\ps-lite\;CMake Files\ps-lite\cmake\;CMake Files\ps-lite\cmake\External\;CMake Files\ps-lite\cmake\Modules\;CMake Files\src\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\ps-lite\;CMake Files\ps-lite\cmake\;CMake Files\ps-lite\cmake\External\;CMake Files\ps-lite\cmake\Modules\;CMake Files\src\;CMake Files\src\data\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/sina/github/liner"/>
@@ -98,6 +98,7 @@
 				<Compiler>
 					<Add directory="/Users/sina/github/liner/include"/>
 					<Add directory="/Users/sina/github/liner/ps-lite/include"/>
+					<Add directory="/Users/sina/github/liner/src/../include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include"/>
@@ -122,6 +123,7 @@
 				<Compiler>
 					<Add directory="/Users/sina/github/liner/include"/>
 					<Add directory="/Users/sina/github/liner/ps-lite/include"/>
+					<Add directory="/Users/sina/github/liner/src/../include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include"/>
@@ -137,10 +139,59 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/src/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="datamain">
+				<Option output="/Users/sina/github/liner/bin/datamain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sina/github/liner/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/sina/github/liner/include"/>
+					<Add directory="/Users/sina/github/liner/ps-lite/include"/>
+					<Add directory="/Users/sina/github/liner/src/../include"/>
+					<Add directory="/Users/sina/github/liner/src/data/../../include/produce_data.h"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/src/data/Makefile&quot;  VERBOSE=1 datamain"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/src/data/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/src/data/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/src/data/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="datamain/fast">
+				<Option output="/Users/sina/github/liner/bin/datamain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sina/github/liner/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/sina/github/liner/include"/>
+					<Add directory="/Users/sina/github/liner/ps-lite/include"/>
+					<Add directory="/Users/sina/github/liner/src/../include"/>
+					<Add directory="/Users/sina/github/liner/src/data/../../include/produce_data.h"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/src/data/Makefile&quot;  VERBOSE=1 datamain/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/src/data/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/src/data/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sina/github/liner/src/data/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
-		<Unit filename="/Users/sina/github/liner/include/ValidateParam.h">
-			<Option target="train_liner"/>
-		</Unit>
 		<Unit filename="/Users/sina/github/liner/ps-lite/src/customer.cc">
 			<Option target="pslite"/>
 		</Unit>
@@ -159,7 +210,13 @@
 		<Unit filename="/Users/sina/github/liner/src/ValidateParam.cpp">
 			<Option target="train_liner"/>
 		</Unit>
-		<Unit filename="/Users/sina/github/liner/src/datamain.cc">
+		<Unit filename="/Users/sina/github/liner/src/data/datamain.cc">
+			<Option target="datamain"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/src/data/produce_data.cpp">
+			<Option target="datamain"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/src/liner.cpp">
 			<Option target="train_liner"/>
 		</Unit>
 		<Unit filename="/Users/sina/github/liner/src/murmur_hash3.cc">
@@ -197,6 +254,9 @@
 		</Unit>
 		<Unit filename="/Users/sina/github/liner/src/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/Users/sina/github/liner/src/data/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\data\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

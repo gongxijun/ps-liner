@@ -1,0 +1,6 @@
+include_directories(../../include/produce_data.h)
+aux_source_directory(. LIB_SRCS)
+set(LIBS ${pslite_LINKER_LIBS} gflags glog pslite zmq protobuf)
+add_executable(datamain ${LIB_SRCS} )
+target_link_libraries(datamain ${LIBS})
+#target_link_libraries(proto ${PROTOBUF_LIBRARIES})

@@ -8,7 +8,7 @@
 #include <boost/algorithm/string/classification.hpp>
 #include <boost/algorithm/string/split.hpp>
 #include "ValidateParam.h"
-
+#include <stack>
 using namespace std;
 
 template<typename Val>
@@ -41,17 +41,18 @@ struct KVServerHandle {
             }
             mergerParam.init(m_grad_w,m_grad_b,n-2,req_meta);
             merger_params.insert(std::make_pair(req_meta.sender,mergerParam));
-            DLOG(INFO)<<"ps::sender : "<<req_meta.sender<<"  merger_params: size = "
+            LOG(INFO)<<"ps::sender : "<<req_meta.sender<<"  merger_params: size = "
                      <<merger_params.size()<<" ps::NumWorkers() : "
                      <<ps::NumWorkers()<<std::endl;
 
-            if(merger_params.size() == static_cast<size_t>(ps::NumWorkers())) {
+            //if(merger_params.size() == static_cast<size_t>(ps::NumWorkers()))
+            {
 
                 //求grad_w,grad_b的平均值
                 double t_grad_w=0.0 , t_grad_b=0.0,t_batch=0;
 
                 for(auto merger_it : merger_params){
-                    DLOG(INFO)<<"worker_id :"<<merger_it.first
+                    LOG(INFO)<<"worker_id :"<<merger_it.first
                              <<"  grad_w : "<<merger_it.second.w
                              <<"  grad_b : "<<merger_it.second.b
                              <<" batich : "<<merger_it.second.batch
@@ -67,15 +68,17 @@ struct KVServerHandle {
                 //保存那些
                 for (auto merger_it : merger_params) {
                     server->Response(merger_it.second.req_meta);
+                    std::cout<<"Debug: <-------> responId:  "<<req_meta.sender<<std::endl;
                 }
                 //清理缓存的数据
                 merger_params.clear();
             }
+            //server->Response(req_meta, res); //响应请求
         } else {
             res.keys = req_data.keys;
             res.vals.resize(2);
             //std::cout<<"执行pull操作,store"<<std::endl;
-            DLOG(INFO) << "pull_w: " << liner1.getWeight() << " pull_b: " << liner1.getBias() << std::endl;
+            LOG(INFO) << "pull_w: " << liner1.getWeight() << " pull_b: " << liner1.getBias() << std::endl;
             res.vals.push_back(liner1.getWeight());
             res.vals.push_back(liner1.getBias());
             server->Response(req_meta, res); //响应请求
@@ -102,13 +105,12 @@ struct KVServerHandle {
     //用來存放各個worker請求的參數
     std::unordered_map<WorkerId,MergerParam> merger_params;
 
-
 };
 
 void StartServer() {
 
     if (!ps::IsServer()) return;
-    DLOG(INFO) << "启动Server server_id: "<<ps::MyRank()<<std::endl;
+    LOG(INFO) << "启动Server \n";
     auto server = new ps::KVServer<float>(0);
     server->set_request_handle(KVServerHandle<float>());
     ps::RegisterExitCallback([server]() { delete server; });
@@ -120,7 +122,7 @@ void StartWorker() {
     int epoch = 1;
     int epoch_iter = 0;
     if (!ps::IsWorker()) return;
-    DLOG(INFO) << "启动Worker woker_id = " << ps::MyRank() << "\n";
+    LOG(INFO) << "启动Worker woker_id = " << ps::MyRank() << "\n";
     ps::KVWorker<float> kv(0);
 //加载数据
     liner::Env env;
@@ -139,7 +141,7 @@ void StartWorker() {
         //打开文件读取数据
 
         std::fstream raw_read(file_path, std::ios_base::in);
-        if(raw_read.is_open()){
+        if(!raw_read.is_open()){
             LOG(ERROR)<<file_path<<" :  the feature data load open fails.";
             return ;
         }
@@ -162,7 +164,7 @@ void StartWorker() {
                 //数据转化
                 std::vector<ps::Key> keys;
                 ps::Key key = it - v_raw.begin();
-                key = (server_seq_len*(key%num_server_) - key);
+                key = (server_seq_len*(key%num_server_ + 1) - key);
                 std::vector<float> v_wb;
                 for (auto it_p :t_grad) {
                     keys.push_back(key);
@@ -172,7 +174,7 @@ void StartWorker() {
                 }
 
                 kv.Wait(kv.Push(keys, v_wb)); //等待执行完
-
+                ps::Postoffice::Get()->Barrier(ps::kWorkerGroup);
                 //Pull参数
                 std::vector<float> rets;
                 kv.Wait(kv.Pull(keys, &rets));
@@ -182,18 +184,20 @@ void StartWorker() {
                 liner1.setWeight(rets[rets_size - 2]);
                 liner1.setBias(rets[rets_size - 1]);
 
-                DLOG(INFO) << "\nworker_id  :" << std::to_string(ps::MyRank()) << "  w: " << liner1.getWeight()
+                LOG(INFO) << "\nworker_id  :" << std::to_string(ps::MyRank()) << "  w: " << liner1.getWeight()
                           << "  b: " << liner1.getBias() << std::endl;
             }
         }
     }
-    DLOG(INFO) << "结束\n";
+    LOG(INFO) << "结束\n";
 }
+
+
 
 /*应该将环境变量改成配置文件*/
 
-DEFINE_int32(num_worker ,1 , "the number of worker for run");
-DEFINE_int32(num_server , 1 , "the number of server for run");
+DEFINE_int32(num_worker ,0 , "the number of worker for run");
+DEFINE_int32(num_server , 0 , "the number of server for run");
 DEFINE_string(role , "worker" , "the character of program.");
 DEFINE_int32(port , 8000 , "socket port with comunation each other");
 DEFINE_string(ip,"127.0.0.1","the ip for scheduler");
@@ -216,7 +220,7 @@ int main(int argc, char *argv[]) {
                    "or -flagfile==config.ini";
 
     gflags::SetUsageMessage(usage);
-
+    gflags::ParseCommandLineFlags(&argc,&argv,true);
     bool valid_ip = gflags::RegisterFlagValidator(&FLAGS_ip,&(ValidateParam::ValidateIP));
     bool valid_role = gflags::RegisterFlagValidator(&FLAGS_role,&(ValidateParam::ValidateRole));
     bool valid_server = gflags::RegisterFlagValidator(&FLAGS_num_server,&ValidateParam::ValidateServer);
@@ -229,12 +233,24 @@ int main(int argc, char *argv[]) {
         LOG(ERROR)<<"输入的参数不和法!\n";
         return EXIT_FAILURE;
     }
-    env["DMLC_NUM_WORKER"] = FLAGS_num_worker;
-    env["DMLC_NUM_SERVER"] = FLAGS_num_server;
+    liner::Env env_var;
+    env_var.initEnv();
+    if((FLAGS_num_server&FLAGS_num_worker)){
+        env["DMLC_NUM_WORKER"] = std::to_string(FLAGS_num_worker);
+        env["DMLC_NUM_SERVER"] = std::to_string(FLAGS_num_server);
+    }else{
+        env["DMLC_NUM_WORKER"] = env_var.ps_worker_num;
+        env["DMLC_NUM_SERVER"] = env_var.ps_server_num;
+    }
+
+    LOG(INFO)<<"worker_num is "<<env["DMLC_NUM_WORKER"]
+             <<"\t"<<"server_num is "
+             <<env["DMLC_NUM_SERVER"]<<"\t";
+
     env["DMLC_ROLE"] = FLAGS_role;  //[worker,server,scheduler]
-    env["PS_VERBOSE"] = "1";
+    env["PS_VERBOSE"] = "0";
     env["DMLC_PS_ROOT_URI"] = FLAGS_ip;
-    env["DMLC_PS_ROOT_PORT"] = FLAGS_port;
+    env["DMLC_PS_ROOT_PORT"] = std::to_string(FLAGS_port);
     ps::Environment::Init(env);
 
     // setup server nodes

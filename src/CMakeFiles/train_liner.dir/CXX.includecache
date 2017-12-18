@@ -10,9 +10,9 @@
 ValidateParam.h
 /Users/sina/github/liner/src/ValidateParam.h
 
-/Users/sina/github/liner/src/datamain.cc
-produce_data.h
-/Users/sina/github/liner/src/produce_data.h
+/Users/sina/github/liner/src/liner.cpp
+liner.h
+/Users/sina/github/liner/src/liner.h
 
 /Users/sina/github/liner/src/murmur_hash3.cc
 murmur_hash3.h
@@ -33,6 +33,8 @@ boost/algorithm/string/split.hpp
 -
 ValidateParam.h
 /Users/sina/github/liner/src/ValidateParam.h
+stack
+-
 
 include/ValidateParam.h
 string
@@ -71,18 +73,6 @@ include/base.h
 include/murmur_hash3.h
 stdint.h
 -
-
-include/produce_data.h
-my_sys.h
--
-glog/logging.h
--
-fstream
--
-base.h
-include/base.h
-env.h
-include/env.h
 
 ps-lite/include/dmlc/./base.h
 sys/types.h

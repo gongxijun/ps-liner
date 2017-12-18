@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -std=c++11 -O3 -Wno-unknown-pragmas -pedantic -Wall  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/datamain.dir/datamain.cc.o CMakeFiles/datamain.dir/produce_data.cpp.o  -o ../../bin/datamain /usr/local/lib/libzmq.dylib -lgflags -lglog ../../ps-lite/libpslite.a -lzmq -lprotobuf 

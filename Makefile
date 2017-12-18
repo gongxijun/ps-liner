@@ -136,6 +136,19 @@ train_liner/fast:
 	$(MAKE) -f src/CMakeFiles/train_liner.dir/build.make src/CMakeFiles/train_liner.dir/build
 .PHONY : train_liner/fast
 
+#=============================================================================
+# Target rules for targets named datamain
+
+# Build rule for target.
+datamain: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 datamain
+.PHONY : datamain
+
+# fast build rule for target.
+datamain/fast:
+	$(MAKE) -f src/data/CMakeFiles/datamain.dir/build.make src/data/CMakeFiles/datamain.dir/build
+.PHONY : datamain/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -146,6 +159,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... pslite"
 	@echo "... train_liner"
+	@echo "... datamain"
 .PHONY : help
 
 

@@ -152,32 +152,32 @@ ValidateParam.cpp.s:
 	cd /Users/sina/github/liner && $(MAKE) -f src/CMakeFiles/train_liner.dir/build.make src/CMakeFiles/train_liner.dir/ValidateParam.cpp.s
 .PHONY : ValidateParam.cpp.s
 
-datamain.o: datamain.cc.o
+liner.o: liner.cpp.o
 
-.PHONY : datamain.o
+.PHONY : liner.o
 
 # target to build an object file
-datamain.cc.o:
-	cd /Users/sina/github/liner && $(MAKE) -f src/CMakeFiles/train_liner.dir/build.make src/CMakeFiles/train_liner.dir/datamain.cc.o
-.PHONY : datamain.cc.o
+liner.cpp.o:
+	cd /Users/sina/github/liner && $(MAKE) -f src/CMakeFiles/train_liner.dir/build.make src/CMakeFiles/train_liner.dir/liner.cpp.o
+.PHONY : liner.cpp.o
 
-datamain.i: datamain.cc.i
+liner.i: liner.cpp.i
 
-.PHONY : datamain.i
+.PHONY : liner.i
 
 # target to preprocess a source file
-datamain.cc.i:
-	cd /Users/sina/github/liner && $(MAKE) -f src/CMakeFiles/train_liner.dir/build.make src/CMakeFiles/train_liner.dir/datamain.cc.i
-.PHONY : datamain.cc.i
+liner.cpp.i:
+	cd /Users/sina/github/liner && $(MAKE) -f src/CMakeFiles/train_liner.dir/build.make src/CMakeFiles/train_liner.dir/liner.cpp.i
+.PHONY : liner.cpp.i
 
-datamain.s: datamain.cc.s
+liner.s: liner.cpp.s
 
-.PHONY : datamain.s
+.PHONY : liner.s
 
 # target to generate assembly for a file
-datamain.cc.s:
-	cd /Users/sina/github/liner && $(MAKE) -f src/CMakeFiles/train_liner.dir/build.make src/CMakeFiles/train_liner.dir/datamain.cc.s
-.PHONY : datamain.cc.s
+liner.cpp.s:
+	cd /Users/sina/github/liner && $(MAKE) -f src/CMakeFiles/train_liner.dir/build.make src/CMakeFiles/train_liner.dir/liner.cpp.s
+.PHONY : liner.cpp.s
 
 murmur_hash3.o: murmur_hash3.cc.o
 
@@ -245,9 +245,9 @@ help:
 	@echo "... ValidateParam.o"
 	@echo "... ValidateParam.i"
 	@echo "... ValidateParam.s"
-	@echo "... datamain.o"
-	@echo "... datamain.i"
-	@echo "... datamain.s"
+	@echo "... liner.o"
+	@echo "... liner.i"
+	@echo "... liner.s"
 	@echo "... murmur_hash3.o"
 	@echo "... murmur_hash3.i"
 	@echo "... murmur_hash3.s"

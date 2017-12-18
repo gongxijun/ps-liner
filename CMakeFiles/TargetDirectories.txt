@@ -6,3 +6,6 @@
 /Users/sina/github/liner/src/CMakeFiles/rebuild_cache.dir
 /Users/sina/github/liner/src/CMakeFiles/edit_cache.dir
 /Users/sina/github/liner/src/CMakeFiles/train_liner.dir
+/Users/sina/github/liner/src/data/CMakeFiles/rebuild_cache.dir
+/Users/sina/github/liner/src/data/CMakeFiles/edit_cache.dir
+/Users/sina/github/liner/src/data/CMakeFiles/datamain.dir

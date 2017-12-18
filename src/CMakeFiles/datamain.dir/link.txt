@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -std=c++11 -O3 -Wno-unknown-pragmas -pedantic -Wall  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/datamain.dir/data/datamain.cc.o  -o ../bin/datamain 

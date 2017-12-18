@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/train_liner.dir/ValidateParam.cpp.o"
-  "CMakeFiles/train_liner.dir/datamain.cc.o"
+  "CMakeFiles/train_liner.dir/liner.cpp.o"
   "CMakeFiles/train_liner.dir/murmur_hash3.cc.o"
   "CMakeFiles/train_liner.dir/trainliner.cc.o"
   "../bin/train_liner.pdb"
